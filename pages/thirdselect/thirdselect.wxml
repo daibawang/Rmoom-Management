@@ -1,0 +1,23 @@
+<!--pages/secondselect/secondselect.wxml-->
+<!--pages/yan/yan.wxml-->
+<backbar gohref="../secondselect/secondselect" paddingtop="12" margintop="0" imgcolor="back-grey"></backbar>
+<view class='bar'>
+<view class='body_text'>
+  <view class='time-select' hidden='{{flag}}'>
+    <view class='class-calendar' hidden="{{flagtime}}" >
+        <view class='class-calendar-left'>
+          <view class='left-am'>上 午</view>
+          <view class='left-am left-pm'>下 午</view>
+        </view>
+        <view class='class-calendar-right'>
+          <view class='calendar-right-num {{item.classz}} {{item.isempty==0?"":"noselect"}}'wx:for='{{ timeList }}' data-stime="{{item.time}}" bindtap='selectTime'>{{item.timetext}}
+          </view>
+        </view>
+    </view>
+    <view class='show-time' wx:if="{{Timebegin}}">时间：{{timeList[Timebegin-1].start}}-{{timeList[Timeend-1].end}}</view>
+    <view class='submit-time' style='margin: 100rpx auto;' bindtap='submitT'>确 认</view>
+  </view>
+</view>
+</view>
+
+

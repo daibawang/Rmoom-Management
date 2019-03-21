@@ -1,0 +1,125 @@
+/* pages/record/record.wxss */
+/* pages/serchType/serchType.wxss */
+page{
+  background-color: #fefefe;
+}
+.topbar-bg{
+  margin-top: -100rpx;
+} 
+.topbar-bg image{
+  width: 100%;
+  z-index: 1;
+}
+
+.view1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -250rpx;
+    z-index: 10;
+}
+
+.view-title{
+    color: #fff;
+    box-shadow: 0 0 15rpx rgb(154, 92, 254);
+    border-radius: 20rpx;
+    margin-top: 40rpx;
+    width: 656rpx;
+    background:linear-gradient( to right bottom, #18dbaa 0%, #1dd7bf 100%);
+}
+.view-content1{
+  width: 88%;
+  margin: 0rpx auto 45rpx auto;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.view-content1-left{
+  display: flex;
+  flex-direction: column;
+}
+.left-text{
+  font-size: 45rpx;
+  letter-spacing: 2rpx;
+}
+.left-count{
+  margin-top: 22rpx;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+}
+.view-content-right{
+}
+.head-img{
+  float: right;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  border: 1rpx solid #fff;
+}
+.view-tao{
+  height: 3rpx;
+  background-color: #fff;
+  width: 83%;
+  opacity: 0.8;
+  margin: 0rpx auto 0rpx auto;
+}
+.view-count-text{
+  width: 88%;
+  margin: 10rpx auto 25rpx auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  letter-spacing: 5rpx;
+  justify-content: space-between;
+}
+.view-count-text text{
+  margin-top: 10rpx;
+  /* margin-right: 50rpx; */
+}
+
+.view2 {
+    border-radius: 45rpx;
+    margin-top: 40rpx;
+    width: 656rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text1 {
+  margin-top: 30rpx;
+  color: white;
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 40rpx; 
+}
+.text-place{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  margin-bottom: 35rpx;
+}
+.text2{
+  margin-top: 60rpx;
+  margin-right: 18rpx;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  color: #fff;
+  letter-spacing: 2rpx;
+  line-height: 35rpx;
+}
+.text2 image{
+  width:35rpx;
+  height:35rpx;
+}
+.finish{
+  opacity: 0.6
+}

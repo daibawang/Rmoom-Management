@@ -1,0 +1,30 @@
+/* pages/serchType/serchType.wxss */
+.topbar-bg{
+  margin-top: -100rpx;
+} 
+.topbar-bg image{
+  width: 100%;
+  z-index: 1;
+}
+
+.view1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -250rpx;
+    z-index: 10;
+}
+.view2 {
+    border-radius: 20rpx;
+    margin-top: 40rpx;
+    height: 246rpx;
+    width: 656rpx;
+}
+
+.text1 {
+    color: white;
+    margin-top: 44rpx;
+    margin-left: 52rpx;
+}

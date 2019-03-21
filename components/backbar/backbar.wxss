@@ -1,0 +1,9 @@
+/* components/backbar.wxss */
+.topbar{
+  position: fixed;
+}
+.topbar image{
+  width:46rpx;
+  height:46rpx;
+  margin-left: 30rpx;
+}

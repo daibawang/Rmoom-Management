@@ -1,0 +1,13 @@
+<!--pages/serchType/serchType.wxml-->
+<!-- 656 246 -->
+<backbar gohref="../index/index" paddingtop="85" margintop="0" imgcolor="back-grey"></backbar>
+  <view class='topbar-bg' >
+    <image src='../../images/typeselect_bg.png' ></image>
+  </view>
+<view class='view1' >
+    <view class='view2' style='background:{{item.color}}' wx:for="{{array}}"  data-href='../timeselect/timeselect' data-type="{{item.type}}" bindtap='go'>
+        <view class='text1'>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+</view>

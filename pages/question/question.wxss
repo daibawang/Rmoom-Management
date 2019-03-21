@@ -1,0 +1,63 @@
+/* pages/oneroomlist/oneroomlist.wxss */
+page{
+  height: 100%;
+  background:linear-gradient( to top right, #33caff 0%, #2a85fc 100%);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.body{
+  width:94.5%;
+  margin:150rpx auto;
+  background: #fff;
+  border-radius:20rpx;
+}
+.title{
+  margin-left: 35rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+  letter-spacing: 5rpx;
+  color: #888888;
+}
+.xian{
+  border-top:0.3rpx solid #E7E7E7;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.msg{
+  width: 91%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 37rpx;
+  color: #b2b2b2;
+  letter-spacing: 4rpx;
+}
+.msg textarea{
+  margin-top: 28rpx;
+  width: 100%;
+  height: 550rpx;
+}
+.MaxdNumber{
+  margin-top: 5rpx;
+  margin-left: 5rpx;  
+  font-size: 24rpx;  
+  color: gray;  
+  position: absolute;  
+  left: 585rpx;  
+} 
+.submit-time{
+  margin: 220rpx auto 50rpx auto;
+  width: 620rpx;
+  height: 88rpx;
+  /* background: linear-gradient(to right,#ac4cff 0%, #9666fe 100%); */
+  color: white;
+  font-size: 50rpx;
+  text-align: center;
+  letter-spacing: 20rpx;
+  line-height: 88rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 15rpx #33CAFF;
+  background:linear-gradient( to top right, #33caff 0%, #2a85fc 100%);
+}

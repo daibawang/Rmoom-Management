@@ -1,0 +1,118 @@
+<!--pages/roomdetail/roomdetail.wxml-->
+<backbar gohref="../record/record" paddingtop="115" margintop="0" imgcolor="back-grey"></backbar>
+<view class='body' style='hide:{{3}}rpx'>
+  <view class='modal-body'>
+    <view class='modal-bottom'>
+       <view class='modal-bottom-patr1'>
+        <view class='part1-name'>{{roomtypename[roomdetails.typee]}}{{roomdetails.roomid}}</view>
+        <view class='part1-place'>{{roomdetails.place}}</view>
+       </view>
+       <view class='modal-bottom-part2'>
+          <view class='part2-view1'>基础设施</view>
+          <view class='part2-view1 view2'>可容纳{{roomdetails.peoplenum}}人</view>
+       </view>
+       <view class='modal-bottom-part3'>
+          <ul>
+            <li>
+              <view class="part3-icon" wx:if="{{roomdetails.wifi}}" >
+                <image src='../../images/sb01.png'></image>
+                WiFi
+              </view>
+              <view class="part3-icon" wx:if="{{roomdetails.projector}}">
+                <image src='../../images/sb02.png'></image>
+                投影
+              </view>
+              <view class="part3-icon" wx:if="{{roomdetails.roomcomputer}}">
+                <image src='../../images/sb03.png'></image>
+                教室机
+              </view>
+              <view class="part3-icon " wx:if="{{roomdetails.doorlock}}">
+                <image src='../../images/sb04.png'></image>
+                门禁锁
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon" wx:if="{{roomdetails.wired}}">
+                <image src='../../images/sb05.png'></image>
+                有线网络
+              </view>
+              <view class="part3-icon" wx:if="{{roomdetails.touchtv}}">
+                <image src='../../images/sb06.png' ></image>
+                触屏电视
+              </view>
+              <view class="part3-icon " wx:if="{{roomdetails.stucomputer}}">
+                <image src='../../images/sb07.png'></image>
+                学生电脑
+              </view>
+              <view class="part3-icon" wx:if="{{roomdetails.actdesks}}" >
+                <image src='../../images/sb08.png'></image>
+                活动书桌
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon" wx:if="{{roomdetails.aio}}" >
+                <image src='../../images/sb09.png'></image>
+                一体机
+              </view>
+              <view class="part3-icon" wx:if="{{roomdetails.meetingsys}}">
+                <image src='../../images/sb10.png' ></image>
+                会议系统
+              </view>
+              <view class="part3-icon" wx:if="{{roomdetails.aircolo}}">
+                <image src='../../images/sb11.png'></image>
+                空调
+              </view>
+              <view class="part3-icon " wx:if="{{roomdetails.gddesk}}">
+                <image src='../../images/sb12.png' ></image>
+                固定桌椅
+              </view>
+            </li>
+          </ul>
+       </view>
+    </view>
+  </view>
+  <view class='model-detail'>
+    <view class='modal-conten1'>
+      <view class='model-icon'></view>
+      <view class='model-title'>相关信息</view>
+    </view>
+    <view class='model-input'>
+     <view class='model-inputuse data-sure'>
+        <text class='detail-title'>日期</text>
+        <text class='detail-value'>{{roomdetails.data}}</text>
+      </view>
+      <view class='model-inputuse time-sure'>
+         <text class='detail-title'>时间</text>
+         <text class='detail-value'>{{timeList[roomdetails.ftime-1].start}} - {{timeList[roomdetails.ltime-1].end}}</text>
+      </view>
+      <view class='model-inputuse data-sure'>
+        <text class='detail-title'>用途</text>
+        <text class='detail-value'>{{roomdetails.use}}</text>
+      </view>
+      <view class='model-inputuse phone time-sure'>
+        <text class='detail-title'>电话</text>
+         <text class='detail-value'>{{roomdetails.phone}}</text>
+      </view>
+    </view>
+    <view class='modal-conten1'>
+      <view class='model-icon2'></view>
+      <view class='model-title'>审核状态</view>
+    </view>
+    <view class='model-input model-ispass' style='{{isfinish==true?"margin-bottom: 50rpx;":""}}'>
+      <text style='color:{{roomdetails.pass=="passing"?"#EEEE00":""}};' wx:if="{{roomdetails.pass=='pending'}}">审核中</text>
+      <text style='color:{{roomdetails.pass=="pass"?"#6BB92F":""}};' wx:if="{{roomdetails.pass=='pass'}}"> 已通过</text>
+      <text style='color:{{roomdetails.pass=="nopass"?"red":""}};'  wx:if="{{roomdetails.pass=='nopass'}}"> 未通过</text>
+      <text style='color:{{roomdetails.pass=="cancel"?"black":""}};'  wx:if="{{roomdetails.pass=='cancel'}}">  已取消申请</text>
+    </view>
+    <view class='modal-conten1 modal-conten2' wx:if="{{isfinish}}">
+      <view class='model-icon3'></view>
+      <view class='model-title'>注意事项</view>
+    </view>
+      <view class='model-content2detail detail3' wx:if="{{isfinish}}">
+        <p>请小心使用教室内设备,防止损坏</p>
+        <p>在借用日期前可以取消教室预约</p>
+      </view>
+     <view class='canle-time {{isfinish==false||roomdetails.pass=="cancel"?"canle-gray":""}}' bindtap='submitT' ><span wx:if="{{roomdetails.pass=='cancel'}}">已取消</span><span wx:if="{{roomdetails.pass!='cancel'}}">取消预约</span></view>
+  </view>
+</view>
+

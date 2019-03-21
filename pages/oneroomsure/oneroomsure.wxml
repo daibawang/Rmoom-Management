@@ -1,0 +1,136 @@
+<!--pages/oneroomsure/oneroomsure.wxml-->
+<backbar gohref="../{{backpage}}/{{backtab}}" paddingtop="115" margintop="0" imgcolor="back-grey"></backbar>
+<view class='body' style='hide:{{screenheight}}rpx;background:{{bgcolor}}'>
+  <view class='modal-body'>
+    <view class='modal-bottom'>
+       <view class='modal-bottom-patr1'>
+        <view class='part1-name'>{{roomtypename[selectData.typee]}}{{selectData.roomid}}</view>
+        <view class='part1-place'>{{selectData.place}}</view>
+       </view>
+       <view class='modal-bottom-part2'>
+          <view class='part2-view1'>基础设施</view>
+          <view class='part2-view1 view2'>可容纳{{selectData.peoplenum}}人</view>
+       </view>
+       <view class='modal-bottom-part3'>
+          <ul>
+            <li>
+              <view class="part3-icon" wx:if="{{selectData.wifi=='true'}}" >
+                <image src='../../images/sb01.png'></image>
+                WiFi
+              </view>
+              <view class="part3-icon" wx:if="{{selectData.projector=='true'}}">
+                <image src='../../images/sb02.png'></image>
+                投影
+              </view>
+              <view class="part3-icon" wx:if="{{selectData.roomcomputer=='true'}}">
+                <image src='../../images/sb03.png'></image>
+                教室机
+              </view>
+              <view class="part3-icon " wx:if="{{selectData.doorlock=='true'}}">
+                <image src='../../images/sb04.png'></image>
+                门禁锁
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon" wx:if="{{selectData.wired=='true'}}">
+                <image src='../../images/sb05.png'></image>
+                有线网络
+              </view>
+              <view class="part3-icon" wx:if="{{selectData.touchtv=='true'}}">
+                <image src='../../images/sb06.png' ></image>
+                触屏电视
+              </view>
+              <view class="part3-icon " wx:if="{{selectData.stucomputer=='true'}}">
+                <image src='../../images/sb07.png'></image>
+                学生电脑
+              </view>
+              <view class="part3-icon" wx:if="{{selectData.actdesks}}=='true'" >
+                <image src='../../images/sb08.png'></image>
+                活动书桌
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon" wx:if="{{selectData.aio}}=='true'" >
+                <image src='../../images/sb09.png'></image>
+                一体机
+              </view>
+              <view class="part3-icon" wx:if="{{selectData.meetingsys}}=='true'">
+                <image src='../../images/sb10.png' ></image>
+                会议系统
+              </view>
+              <view class="part3-icon" wx:if="{{selectData.aircolo}}=='true'">
+                <image src='../../images/sb11.png'></image>
+                空调
+              </view>
+              <view class="part3-icon " wx:if="{{selectData.gddesk}}=='true'">
+                <image src='../../images/sb12.png' ></image>
+                固定桌椅
+              </view>
+            </li>
+          </ul>
+       </view>
+    </view>
+  </view>
+  <view class='model-detail'>
+    <view class='modal-conten1'>
+      <view class='model-icon'></view>
+      <view class='model-title'>信息填写</view>
+    </view>
+    <view class='model-input'>
+      <view class='model-inputuse'>
+        <text>用途</text>
+        <!-- <input placeholder='请选择教室用途' hidden='{{zindex}}' name='useruse' bindinput="getUse"></input> -->
+        <picker bindchange="getUse" value="{{use}}" range="{{uselist}}" style='height:55rpx'>
+          <span wx:if="{{use==null}}">请选择教室用途</span>{{uselist[use]}}
+        </picker>
+      </view>
+      <view class='model-inputuse phone'>
+        <text>电话</text>
+        <input placeholder='请输入您的电话号码' type='number' hidden='{{zindex}}' name='userphone' bindinput="getPhone"></input>
+      </view>
+    </view>
+    <view class='modal-conten1'>
+      <view class='model-icon2'></view>
+      <view class='model-title'>日期时间</view>
+    </view>
+      <view class='model-content2detail'>
+      <view class='model-inputuse data-sure'>
+        <text class='detail-title'>日期</text>
+        <text class='detail-value'>{{sinfonia[0]}}</text>
+      </view>
+      <view class='model-inputuse time-sure'>
+         <text class='detail-title'>时间</text>
+         <text class='detail-value'>{{sinfonia[1]}}-{{sinfonia[2]}}</text>
+      </view>
+
+      </view>
+    <view class='modal-conten1 modal-conten2'>
+      <view class='model-icon3'></view>
+      <view class='model-title'>注意事项</view>
+    </view>
+      <view class='model-content2detail detail3'>
+        <p>确认后不可修改信息</p>
+        <p>借用审批通过后可以在借用记录里查看借用信息</p>
+        <p>在借用日期前可以取消教室预约</p>
+        <p>请小心使用教室内设备,防止损坏</p>
+      </view>
+     <view class='submit-time' bindtap='submitT' style="background:{{bgcolor}};box-shadow: 0 0 15rpx {{bgcoloronly}};">确 认</view>
+  </view>
+</view>
+<view class='model-box-sure' hidden="{{flag1}}" catchtouchmove='true'>
+  <view class='box-sure-bg' hidden='{{!isexist}}'>
+  <image src='../../images/close.png' class='modal-body-cha' bindtap='goindex'></image>
+  <image src='../../images/sure.png' class='modal-body-icon' ></image>
+   <text class='sure-success'>预约成功</text>
+   <text class='sure-ts'>可以在借用记录中查看预约信息</text>
+    <view class='submit-time-sure' bindtap="hide" >查看记录</view>
+  </view>
+  <!-- 借用失败 -->
+  <view class='box-sure-bg' hidden='{{isexist}}'>
+    <image src='../../images/close.png' class='modal-body-cha'bindtap='goindex' ></image>
+    <image src='../../images/sure-no.png' class='modal-body-icon'></image>
+    <text class='sure-success sure-success-no'>预约失败</text>
+    <text class='sure-ts sure-ts-no'>该教室此时间段可能已被借用</text>
+  <view class='submit-time-sure' bindtap="rehide" >重新选择教室</view>
+  </view>
+</view>

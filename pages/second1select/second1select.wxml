@@ -1,0 +1,37 @@
+<!--pages/secondselect/secondselect.wxml-->
+<!--pages/yan/yan.wxml-->
+<backbar gohref="../timeselect/timeselect?backtab=2" paddingtop="12" margintop="0" imgcolor="back-grey"></backbar>
+<view class='bar'>
+<view class='body_text'>
+  <view class='time-select' hidden='{{flag}}'>
+    <view class='time-calendar'>
+    <view class='time-calendar-months'>
+    <view class='pre' bindtap='preMonth'><image src='../../images/next_month.png'></image></view> 
+    <text class='time-month'>{{ month}}<text class='time-month-yue'>月</text></text >
+    <view class='next' bindtap='nextMonth'><image src='../../images/next_month.png'></image></view>
+    </view>
+      <view class="time-calendar-weekArr">
+        <view class='weekArr'wx:for='{{ weekArr }}'>{{ item }}</view>
+      </view>
+      <view class='tiao'></view>
+      <view class="time-calendar-arry">
+        <view wx:for='{{ arr }}' style='{{ item == 0 ? "visibility:hidden": "" }}' class='{{item<getDate||item>getDate+getcha?"dateNone":"dateOther"}}' data-day='{{item}}' bindtap="selectDay" ><view class='{{item ==  getDate ?"getDateOn":(item ==  selectDday&&selectMontn==month?"getStimeOn":"getDateNo")}}'>{{ item }}</view>{{ item }}
+      </view></view>
+    </view>
+    <!-- <view class='class-calendar' hidden="{{flagtime}}" >
+        <view class='class-calendar-left'>
+          <view class='left-am'>上 午</view>
+          <view class='left-am left-pm'>下 午</view>
+        </view>
+        <view class='class-calendar-right'>
+          <view class='calendar-right-num {{item.classz}} 'wx:for='{{ timeList }}' data-stime="{{item.time}}" bindtap='selectTime'>{{item.timetext}}
+          </view>
+        </view>
+    </view> -->
+    <!-- <view class='show-time' wx:if="{{Timebegin}}">时间：{{timeList[Timebegin-1].start}}-{{timeList[Timeend-1].end}}</view> -->
+    <view class='submit-time' style='margin: 100rpx auto;' bindtap='submitT'>确 认</view>
+  </view>
+</view>
+</view>
+
+

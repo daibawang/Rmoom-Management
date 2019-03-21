@@ -1,0 +1,4 @@
+<!--components/backbar.wxml-->
+<view class='topbar' style='margin-top: {{margintop}}rpx; padding-top: {{paddingtop}}px;'>
+<image src='../../images/{{imgcolor}}.png' data-href='{{gohref}}' bindtap='go'></image>
+</view>

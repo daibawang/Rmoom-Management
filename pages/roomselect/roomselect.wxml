@@ -1,0 +1,162 @@
+ <!--pages/roomselect/roomselect.wxml-->
+<backbar gohref="../index/index" paddingtop="115" margintop="0" imgcolor="back-grey"></backbar>
+<view class='body' style='height:{{(((currentTab==0?bgheight1:(currentTab==1?bgheight2:bgheight3))-2)*450+100+screenheight*2)>screenheight*2?(((currentTab==0?bgheight1:(currentTab==1?bgheight2:bgheight3))-2)*450+100+screenheight*2):screenheight*2}}rpx'>
+<view class='container-left'style='height:{{(((currentTab==0?bgheight1:(currentTab==1?bgheight2:bgheight3))-2)*450+300+screenheight*2)>screenheight*2?(((currentTab==0?bgheight1:(currentTab==1?bgheight2:bgheight3))-2)*450+300+screenheight*2):screenheight*2.3}}rpx'hidden="{{flag2}}"></view>
+  <view class='container' 
+  style='height:{{currentTab==0?bgheight1*450+150:(currentTab==1?bgheight2*450+150:bgheight3*450+150)}}rpx' >
+    <view class='swiper-tab'>
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">大数据学院</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">多媒体教室</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">普通教室</view>
+    </view>
+      <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{currentTab==0?bgheight1*450+150:(currentTab==1?bgheight2*450+150:bgheight3*450+150)}}rpx" bindchange="bindChange" >
+        <!-- 大数据学院 -->
+        <swiper-item>
+          <view class='swiper-item1-view'>
+            <view class='room-yd-view' wx:for="{{array1}}" data-item='{{item}}' wx:for-index="bindex" bindtap='show'>
+              <view class='room-img'>
+                <image src='https://www.bcuvote.top/RoomServer/upload/{{item.picture}}'></image>
+              </view>
+              <view class='room-bottom'>
+                <text class='room-bottom-romname'>大数据学院{{item.roomid}}</text>
+                <button class='button'  data-roomid='{{item.roomid}}' data-item='{{item}}' catchtap='go'>预约</button>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <!-- 多媒体教室 -->
+        <swiper-item>
+          <view class='swiper-item1-view'>
+            <view class='room-yd-view' wx:for="{{array2}}"  data-item='{{item}}'bindtap='show'>
+              <view class='room-img'>
+                <image src='https://www.bcuvote.top/RoomServer/upload/{{item.picture}}'></image>
+              </view>
+              <view class='room-bottom'>
+                <text class='room-bottom-romname'>多媒体教室{{item.roomid}}</text>
+                <button class='button' data-roomid='{{item.roomid}}' data-item='{{item}}' catchtap='go'>预约</button>
+              </view>
+          </view>
+        </view>
+        </swiper-item>
+        <!-- 普通教室 -->
+        <swiper-item>
+           <view class='swiper-item1-view'>
+            <view class='room-yd-view' wx:for="{{array3}}" data-item='{{item}}'bindtap='show'>
+              <view class='room-img'>
+                <image src='https://www.bcuvote.top/RoomServer/upload/{{item.picture}}'></image>
+              </view>
+              <view class='room-bottom'>
+                <text class='room-bottom-romname'>普通教室{{item.roomid}}</text>
+                <button class='button' data-roomid='{{item.roomid}}' data-item='{{item}}' catchtap='go'>预约</button>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+  </view>
+<view class='container-right'style='height:{{(((currentTab==0?bgheight1:(currentTab==1?bgheight2:bgheight3))-2)*450+300+screenheight*2)>screenheight*2?(((currentTab==0?bgheight1:(currentTab==1?bgheight2:bgheight3))-2)*450+300+screenheight*2):screenheight*2.3}}rpx'hidden="{{flag2}}"></view>
+</view>
+<view class="modal-box" hidden="{{flag1}}" bindtap="hide" catchtouchmove='true'>
+  <view class='modal-body'>
+  <!-- <text class="textstyle {{selectjson.wifi==false?'second':''}}">{{selectjson.roomname}}</text> -->
+    <view class='modal-top'>
+      <!-- <image src='{{selectjson.roomimg}}'></image> -->
+      <view  style='height:400rpx;'>
+          <image src='https://www.bcuvote.top/RoomServer/upload/{{selectjson.picture}}'></image>
+      </view >
+    </view>
+    <view class='modal-bottom'>
+       <view class='modal-bottom-patr1'>
+        <view class='part1-name'>{{roomtypename[selectjson.typee]}}{{selectjson.roomid}}</view>
+        <view class='part1-place'>{{selectjson.place}}</view>
+        <button class='part1-button'  data-roomid='{{selectjson.roomid}}' data-item='{{selectjson}}' catchtap='go'>预约</button>
+       </view>
+       <view class='modal-bottom-part2'>
+          <view class='part2-view1'>基础设施</view>
+          <view class='part2-view1 view2'>可容纳{{selectjson.peoplenum}}人</view>
+       </view>
+       <view class='modal-bottom-part3'>
+          <ul>
+            <li>
+              <view class="part3-icon {{selectjson.wifi=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.wifi=='false'?'part3-icon-xian xian2':''}}"></view>
+                    <image src='../../images/sb01.png' style="display:{{selectjson.wifi=='false'?'none':''}}"></image>
+                    <image src='../../images/sb01-grey.png' style="display:{{selectjson.wifi=='false'?'':'none'}}"></image>
+                    WiFi
+              </view>
+              <view class="part3-icon {{selectjson.projector=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.projector=='false'?'part3-icon-xian xian2':''}}"></view>
+                    <image src='../../images/sb02.png' style="display:{{selectjson.projector=='false'?'none':''}}"></image>
+                    <image src='../../images/sb02-grey.png' style="display:{{selectjson.projector=='false'?'':'none'}}"></image>
+                  投影
+              </view>
+              <view class="part3-icon {{selectjson.roomcomputer=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.roomcomputer=='false'?'part3-icon-xian xian3':''}}"></view>
+                    <image src='../../images/sb03.png' style="display:{{selectjson.roomcomputer=='false'?'none':''}}"></image>
+                    <image src='../../images/sb03-grey.png' style="display:{{selectjson.roomcomputer=='false'?'':'none'}}"></image>
+                  教室机
+              </view>
+              <view class="part3-icon part3-icon-last {{selectjson.doorlock=='false'?'part3-icon-grey':''}}">
+                 <view class="{{selectjson.doorlock=='false'?'part3-icon-xian xian3':''}}"></view>
+                    <image src='../../images/sb04.png' style="display:{{selectjson.doorlock=='false'?'none':''}}"></image>
+                    <image src='../../images/sb04-grey.png' style="display:{{selectjson.doorlock=='false'?'':'none'}}"></image>
+                  门禁锁
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon {{selectjson.wired=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.wired=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb05.png' style="display:{{selectjson.wired=='false'?'none':''}}"></image>
+                    <image src='../../images/sb05-grey.png' style="display:{{selectjson.wired=='false'?'':'none'}}"></image>
+                  有线网络
+              </view>
+              <view class="part3-icon {{selectjson.touchtv=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.touchtv=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb06.png' style="display:{{selectjson.touchtv=='false'?'none':''}}"></image>
+                    <image src='../../images/sb06-grey.png' style="display:{{selectjson.touchtv=='false'?'':'none'}}"></image>
+                  触屏电视
+              </view>
+              <view class="part3-icon {{selectjson.stucomputer=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.stucomputer=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb07.png' style="display:{{selectjson.stucomputer=='false'?'none':''}}"></image>
+                    <image src='../../images/sb07-grey.png' style="display:{{selectjson.stucomputer=='false'?'':'none'}}"></image>
+                  学生电脑
+              </view>
+              <view class="part3-icon part3-icon-last {{selectjson.actdesks=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.actdesks=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb08.png' style="display:{{selectjson.actdesks=='false'?'none':''}}"></image>
+                    <image src='../../images/sb08-grey.png' style="display:{{selectjson.actdesks=='false'?'':'none'}}"></image>
+                  活动书桌
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon {{selectjson.aio=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.aio=='false'?'part3-icon-xian xian3':''}}"></view>
+                    <image src='../../images/sb09.png' style="display:{{selectjson.aio=='false'?'none':''}}"></image>
+                    <image src='../../images/sb09-grey.png' style="display:{{selectjson.aio=='false'?'':'none'}}"></image>
+                  一体机
+              </view>
+              <view class="part3-icon {{selectjson.meetingsys=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.meetingsys=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb10.png' style="display:{{selectjson.meetingsys=='false'?'none':''}}"></image>
+                    <image src='../../images/sb10-grey.png' style="display:{{selectjson.meetingsys=='false'?'':'none'}}"></image>
+                  会议系统
+              </view>
+              <view class="part3-icon {{selectjson.aircolo=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.aircolo=='false'?'part3-icon-xian xian2':''}}"></view>
+                    <image src='../../images/sb11.png' style="display:{{selectjson.aircolo=='false'?'none':''}}"></image>
+                    <image src='../../images/sb11-grey.png' style="display:{{selectjson.aircolo=='false'?'':'none'}}"></image>
+                  空调
+              </view>
+              <view class="part3-icon part3-icon-last {{selectjson.gddesk=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.gddesk=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb12.png' style="display:{{selectjson.gddesk=='false'?'none':''}}"></image>
+                    <image src='../../images/sb12-grey.png' style="display:{{selectjson.gddesk=='false'?'':'none'}}"></image>
+                  固定桌椅
+              </view>
+            </li>
+          </ul>
+       </view>
+    </view>
+    </view>
+</view>

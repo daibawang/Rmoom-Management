@@ -1,0 +1,29 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/massage/massage",
+        "pages/imfoopen/imfoopen",
+        "pages/question/question",
+        "pages/thirdselect/thirdselect",
+        "pages/third1select/third1select",
+        "pages/secondselect/secondselect",
+        "pages/second1select/second1select",
+        "pages/roomselect/roomselect",        
+        "pages/record/record",
+        "pages/roomdetail/roomdetail",
+        "pages/oneroomsure/oneroomsure",     
+        "pages/oneroomlist/oneroomlist",
+        "pages/timeselect/timeselect",
+        "pages/serchType/serchType",
+        "pages/introduce/introduce",
+        "pages/logs/logs",
+        "pages/demo/demo"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    }
+}

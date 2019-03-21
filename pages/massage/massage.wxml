@@ -1,0 +1,11 @@
+<!--pages/oneroomlist/oneroomlist.wxml-->
+<backbar gohref="../imfoopen/imfoopen" paddingtop="35" margintop="0" imgcolor="back-grey"></backbar>
+<view class='body'>
+    <view class='title'>公告消息</view>
+    <view class="title-data">{{mage.time}}</view>
+      <view class='xian'></view>
+      <!--默认字数多少-->
+      <view class='msg'>
+        <text decode="{{true}}" space="{{true}}" class='msgtext'>&nbsp;&nbsp;&nbsp;{{mage.massage}}</text>
+      </view>
+</view>

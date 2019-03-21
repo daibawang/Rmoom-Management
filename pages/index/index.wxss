@@ -1,0 +1,304 @@
+
+.topbar-bg{
+  margin-top: -100rpx;
+} 
+.topbar-bg image{
+  width: 100%;
+}
+.topbar-view{
+ background: #fff;
+  width: 657rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.topbar-info{
+  border-radius: 20rpx;
+  box-shadow: 0 0 15rpx #9c5ffe;
+  position: relative;
+  margin-top: -200rpx;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin:auto; */
+  width: 100%;
+  height: 255rpx;
+}
+.topbar-info image{
+  
+  width: 657rpx;
+  height: 255rpx;
+}
+.topbar-bgcolor{
+  border-radius: 15rpx;
+  margin-top: -265rpx;
+  position: absolute;
+  width: 658rpx;
+  height: 257rpx;
+  opacity: 0.85;
+  background:linear-gradient(to right, #33CAFF,#2A85FC);
+}
+.info-tools{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  margin-top: 31rpx;
+  margin-right: 33rpx;
+  z-index: 10;
+}
+.info-tools image{
+  width: 41rpx;
+  height: 38rpx;
+}
+.info-photo{
+  border: 1px solid rgba(200,200,200,0);
+  /* position: relative; */
+}
+.head-img {
+  margin-top: 71rpx;
+  margin-left: 59rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  border: 3rpx solid #fff;
+}
+.head-img-bg1{
+  position: absolute;
+  margin-top: 61rpx;
+  margin-left: 48rpx;
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: #FBFBFB;
+  z-index: -1;
+}
+.head-img-bg1::before,.head-img-bg1::after{
+  content: "";
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top:50%;
+  transform:translate(0, -50%) scale(1);
+  background:#FBFBFB;
+  border-radius:300px;
+  z-index:0;
+}
+.head-img-bg1::before{
+			width: 145rpx;
+              height: 145rpx;
+              transform:translate(0, -50%) scale(0);
+              animation:flareScale 1.8s .5s infinite ease-out;
+		}
+		.head-img-bg1::after{
+			width: 145rpx;
+              height: 145rpx;
+              transform:translate(0, -50%) scale(0);
+              animation:flareScale 1.8s infinite ease-out;
+		}
+		@keyframes flareScale {
+  0%{
+   transform:translate(0, -50%) scale(.3);
+  }
+  100%{
+    transform:translate(0, -50%) scale(1.6);
+    opacity:0;
+  }
+}
+.bg2{
+  width: 171rpx;
+  height: 171rpx;
+  margin-top: 48rpx;
+  margin-left: 37rpx;
+  opacity: 0.29;
+}
+.info-login{
+  letter-spacing: 15rpx;
+  margin-top: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 42rpx;
+  color: #FFFFFF;
+}
+.info-text{
+  display: flex;
+  flex-direction:column;
+  position: absolute;
+  top: 85rpx;
+  left: 265rpx;
+  line-height: 40rpx;
+}
+.info-text-name{
+/* 冬城君: */
+font-family: PingFangSC-Regular;
+font-size: 37rpx;
+color: #FFFFFF;
+letter-spacing: 0;
+}
+.info-text-department{
+  /* 信息学部: */
+font-family: PingFangSC-Regular;
+font-size: 26rpx;
+color: #FFFFFF;
+}
+.info-text-number{
+  /* 14111633112: */
+font-family: PingFangSC-Regular;
+font-size: 26rpx;
+color: #FFFFFF;
+letter-spacing: 0;
+}
+.select-container{
+  width: 100%;
+  margin-top: 21rpx;
+   display: flex;
+   flex-direction: row;
+}
+.select-container-left{
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  /* background: red; */
+  margin-right: 21rpx;
+}
+.select-container-right{
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  /* background: red; */
+}
+.left-borrow{
+  padding-top: 22rpx;
+  width: 100%;
+  height: 451rpx;
+  border-radius: 20rpx;
+  background:linear-gradient(to right, #ac4bff,#9666fe);
+  margin-bottom: 18rpx;
+  box-shadow: 0 0 10rpx #9666fe;
+}
+.left-introduce{
+  padding-top: 22rpx;
+  border-radius: 20rpx;
+  background:linear-gradient( to right,#fe51b1, #fb4772);
+  width: 100%;
+  height: 217rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 0 10rpx #fb4772;
+}
+.left-open{
+  padding-top: 22rpx;
+  border-radius:20rpx;
+  background:linear-gradient( to right, #ffd82f, #ffba2c);
+  width: 100%;
+  height: 217rpx;
+  box-shadow: 0 0 10rpx #ffba2c;
+}
+.right-sao{
+  padding-top: 22rpx;
+  border-radius: 20rpx;
+  background:linear-gradient( to right, #ffbc5b, #ff6739);
+  width: 100%;
+  height: 219rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 0 10rpx #ff6739;
+}
+.right-record{
+  padding-top: 22rpx;
+  border-radius: 20rpx;
+  background:linear-gradient( to right, #18dbaa, #1dd7bf);
+  width: 100%;
+  height: 451rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 0 10rpx #1dd7bf;
+}
+.right-question{
+  padding-top: 22rpx;
+  border-radius: 20rpx;
+  background:linear-gradient( to right, #33caff, #2a85fc);
+  width: 100%;
+  height: 216rpx;
+  box-shadow: 0 0 10rpx #2a85fc;
+}
+.select-text1{
+  color: white;
+  font-size: 40rpx;
+  font-family: "PingFang SC";
+  margin-left: 30rpx;
+}
+.select-text2{
+  color: white;
+  font-size: 40rpx;
+  font-family: "PingFang SC";
+  margin-right: 30rpx;
+  float: right;
+}
+.left-borrow image{
+  width: 232rpx;
+  height:242rpx;
+  float: right;
+  margin-top: 140rpx;
+  margin-right: 20rpx;
+}
+.right-sao image{
+  width: 118rpx;
+  height: 92rpx;
+  margin-left: 20rpx;
+  margin-top: 118rpx;
+}
+/* 弹出层 */
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  }
+  .modal-body{
+  margin: 348rpx auto;
+  width: 620rpx;
+  border-radius: 10rpx;
+  background: #FBFBFB;
+  padding-top: 25rpx;
+  padding-bottom: 10rpx;
+  }
+  .modal-body image{
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 35rpx;
+    float: right;
+    margin-bottom: 50rpx;
+  }
+  .inputView{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40rpx;
+    display: flex;
+    flex-direction: column;
+  }
+  .inputText{
+    /* border-bottom: 1rpx solid #A9A9A9; */
+    margin: auto;
+    height: 70rpx;
+    font-size: 30rpx;
+  }
+  .tiao{
+    margin: 0rpx auto;
+    width: 50%;
+    height: 2rpx;
+    background-color: #A9A9A9;
+
+  }
+
+  .loginBtn{
+    flex: 1;
+    font-size: 40rpx;
+    text-align: center;
+    letter-spacing: 20rpx;
+    width: 70%;
+    height: 95rpx;
+    margin: 80rpx auto;
+    border-radius: 60rpx;
+    background:linear-gradient( to right, #33caff, #2a85fc);
+    color: #fff;
+    box-shadow: 0 0 15rpx #9c5ffe;    
+  }

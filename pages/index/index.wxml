@@ -1,0 +1,69 @@
+<view class='body'>
+  <view class='topbar-bg' >
+    <image src='../../images/index-bar-bg.png'></image>
+  </view>
+  <view class='topbar-view'>
+    <view class='topbar-info'>
+      <image src='../../images/index-info-bg.png'></image>
+      <view class='topbar-bgcolor'>
+        <view class='info-tools'  bindtap='ToSetup'>
+          <image src="../../images/index-info-tools.png"></image>
+        </view>
+        <view class='info-photo'>
+          <view class='head-img-bg1'></view>
+          <view class='head-img-bg1 bg2'></view>
+          <open-data type="userAvatarUrl" class="head-img"></open-data>
+          <view class='info-text'>
+            <view class='info-login' bindtap='login' wx:if="{{islogin==false}}">登录</view>
+            <text class="info-text-name" wx:if='{{username}}'>{{username}}</text>
+            <text class='info-text-department' wx:if='{{department}}'>{{department}}</text>
+            <text class='info-text-number' wx:if='{{studentnumber}}'>{{studentnumber}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='select-container'>
+      <view class='select-container-left'>
+        <view class='left-borrow' data-href='../serchType/serchType' bindtap='go'>
+          <text class='select-text1'>教室借用</text>
+          <image src='../../images/left-borrow-img.png'></image>
+        </view>
+        <view class='left-introduce' data-href='../roomselect/roomselect' bindtap='go' >
+          <text class='select-text2'>教室介绍 </text>
+        </view>
+        <view class='left-open' data-href='../imfoopen/imfoopen' bindtap='go' >
+          <text class='select-text2'>信息公开</text>
+        </view>
+      </view>
+      <view class='select-container-right'>
+        <view class='right-sao' bindtap='code'>
+          <text class='select-text2'>扫一扫</text>
+          <image src='../../images/right-sao-img.png'></image>
+        </view>
+        <view class='right-record' data-href='../record/record' bindtap='go' >
+          <text class='select-text1'>借用记录</text>
+        </view>
+        <view class='right-question' data-href='../question/question' bindtap='go' >
+          <text class='select-text2'>问题反馈</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='modal-box' hidden="{{flag}}">
+  <view class='modal-body'>
+  <image src='../../images/close.png'  bindtap='hide'></image>
+  <form bindsubmit='formBindsubmit'>
+    <view class="inputView"> 
+      <input class="inputText"  type='submit' placeholder="请输入账号" name='userName' /> 
+      <view class='tiao'></view>
+    </view>
+    <view class="inputView"> 
+      <input class="inputText" type='password' placeholder="请输入密码" name='userPwd'/>
+      <view class='tiao'></view>
+    </view>
+      <button class="loginBtn" form-type='submit' hover-class='buttonhover'>登录</button> 
+  </form>
+  </view>
+</view>

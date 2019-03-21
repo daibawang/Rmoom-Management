@@ -1,0 +1,15 @@
+<!--pages/oneroomlist/oneroomlist.wxml-->
+<backbar gohref="../index/index" paddingtop="35" margintop="0" imgcolor="back-grey"></backbar>
+<view class='body'>
+  <form bindsubmit='searchBox'>
+    <view class='title'>请填写要反馈的问题</view>
+      <view class='xian'></view>
+      <!--默认字数多少-->
+      <text class="MaxdNumber">{{MaxdNumber|0}}/{{max}}</text> 
+      <view class='msg'>
+        <textarea placeholder='您有哪些问题' name='q_content' maxlength='1000' bindinput="inputs">
+        </textarea>
+    </view>
+      <button class='submit-time' form-type='submit' style="">提 交</button>
+  </form>
+</view>

@@ -1,0 +1,158 @@
+<!--pages/yan/yan.wxml-->
+<backbar gohref="../serchType/serchType" paddingtop="12" margintop="0" imgcolor="back-grey"></backbar>
+<view class='bar'>
+<view class='barimg' style='  background-image: url({{cimg[imgtype]}})'>
+<view class='left' style="color: {{imgtype==0?'#7e8c99':'white'}}" bindtap='changeimg'>时间</view>
+<view class='right' style="color: {{imgtype==0?'white':'#7e8c99'}}" bindtap='changeimg2'>教室</view>
+</view>
+<view class='body_text'>
+  <view class='time-select' hidden='{{flag}}'>
+    <view class='time-calendar'>
+    <view class='time-calendar-months'>
+    <view class='pre' bindtap='preMonth'><image src='../../images/next_month.png'></image></view> 
+    <text class='time-month'>{{ month}}<text class='time-month-yue'>月</text></text >
+    <view class='next' bindtap='nextMonth'><image src='../../images/next_month.png'></image></view>
+    </view>
+      <view class="time-calendar-weekArr">
+        <view class='weekArr'wx:for='{{ weekArr }}'>{{ item }}</view>
+      </view>
+      <view class='tiao'></view>
+      <view class="time-calendar-arry">
+        <view wx:for='{{ arr }}' style='{{ item == 0 ? "visibility:hidden": "" }}' class='{{item<getDate||item>getDate+getcha?"dateNone":"dateOther"}}' data-day='{{item}}' bindtap="selectDay" ><view class='{{item ==  getDate ?"getDateOn":(item ==  selectDday&&selectMontn==month?"getStimeOn":"getDateNo")}}'>{{ item }}</view>{{ item }}
+      </view></view>
+    </view>
+    <view class='class-calendar' hidden="{{flagtime}}" >
+        <view class='class-calendar-left'>
+          <view class='left-am'>上 午</view>
+          <view class='left-am left-pm'>下 午</view>
+        </view>
+        <view class='class-calendar-right'>
+          <view class='calendar-right-num {{item.classz}} 'wx:for='{{ timeList }}' data-stime="{{item.time}}" bindtap='selectTime'>{{item.timetext}}
+          </view>
+        </view>
+    </view>
+    <view class='show-time' wx:if="{{Timebegin}}">时间：{{timeList[Timebegin-1].start}}-{{timeList[Timeend-1].end}}</view>
+    
+    <view class='submit-time' style='margin: {{submitT}}rpx auto;' bindtap='submitT'>确 认</view>
+  </view>
+  <!-- 第二栏 -->
+  <view class='text2' hidden='{{flag2}}'>
+    <view class='container2'style="height:{{items==0?0:(items<3?items*580:'')}}rpx">
+      <view class='room-yd-view' wx:for="{{roomjson}}" data-item='{{item}}' wx:for-index="bindex" bindtap='show'>
+        <view class='room-img'>
+          <image src='https://www.bcuvote.top/RoomServer/upload/{{item.picture}}'></image>
+        </view>
+        <view class='room-bottom'>
+          <text class='room-bottom-romname'>{{roomtypename[item.typee]}}{{item.roomid}}</text>
+          <button class='button' data-bindex="{{bindex}}" data-roomid='{{item.roomid}}' data-item='{{item}}' catchtap='go'>预约</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+<!-- 弹出层 -->
+<view class="modal-box" hidden="{{flagshow1}}" bindtap="hide" catchtouchmove='true'>
+  <view class='modal-body'>
+  <!-- <text class="textstyle {{selectjson.wifi==false?'second':''}}">{{selectjson.roomname}}</text> -->
+    <view class='modal-top'>
+      <!-- <image src='{{selectjson.roomimg}}'></image> -->
+      <view style='height:400rpx;'>
+          <image src='https://www.bcuvote.top/RoomServer/upload/{{selectjson.picture}}'></image>
+      </view >
+    </view>
+    <view class='modal-bottom'>
+       <view class='modal-bottom-patr1'>
+        <view class='part1-name'>{{roomtypename[selectjson.typee]}}{{selectjson.roomid}}</view>
+        <view class='part1-place'>{{selectjson.place}}</view>
+        <button class='part1-button' data-roomid='{{selectjson.roomid}}' data-item='{{selectjson}}'  catchtap='go'>预约</button>
+       </view>
+       <view class='modal-bottom-part2'>
+          <view class='part2-view1'>基础设施</view>
+          <view class='part2-view1 view2'>可容纳{{selectjson.peoplenum}}人</view>
+       </view>
+       <view class='modal-bottom-part3'>
+          <ul>
+            <li>
+              <view class="part3-icon {{selectjson.wifi=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.wifi=='false'?'part3-icon-xian xian2':''}}"></view>
+                    <image src='../../images/sb01.png' style="display:{{selectjson.wifi=='false'?'none':''}}"></image>
+                    <image src='../../images/sb01-grey.png' style="display:{{selectjson.wifi=='false'?'':'none'}}"></image>
+                    WiFi
+              </view>
+              <view class="part3-icon {{selectjson.projector=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.projector=='false'?'part3-icon-xian xian2':''}}"></view>
+                    <image src='../../images/sb02.png' style="display:{{selectjson.projector=='false'?'none':''}}"></image>
+                    <image src='../../images/sb02-grey.png' style="display:{{selectjson.projector=='false'?'':'none'}}"></image>
+                  投影
+              </view>
+              <view class="part3-icon {{selectjson.roomcomputer=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.roomcomputer=='false'?'part3-icon-xian xian3':''}}"></view>
+                    <image src='../../images/sb03.png' style="display:{{selectjson.roomcomputer=='false'?'none':''}}"></image>
+                    <image src='../../images/sb03-grey.png' style="display:{{selectjson.roomcomputer=='false'?'':'none'}}"></image>
+                  教室机
+              </view>
+              <view class="part3-icon part3-icon-last {{selectjson.doorlock=='false'?'part3-icon-grey':''}}">
+                 <view class="{{selectjson.doorlock=='false'?'part3-icon-xian xian3':''}}"></view>
+                    <image src='../../images/sb04.png' style="display:{{selectjson.doorlock=='false'?'none':''}}"></image>
+                    <image src='../../images/sb04-grey.png' style="display:{{selectjson.doorlock=='false'?'':'none'}}"></image>
+                  门禁锁
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon {{selectjson.wired=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.wired=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb05.png' style="display:{{selectjson.wired=='false'?'none':''}}"></image>
+                    <image src='../../images/sb05-grey.png' style="display:{{selectjson.wired=='false'?'':'none'}}"></image>
+                  有线网络
+              </view>
+              <view class="part3-icon {{selectjson.touchtv=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.touchtv=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb06.png' style="display:{{selectjson.touchtv=='false'?'none':''}}"></image>
+                    <image src='../../images/sb06-grey.png' style="display:{{selectjson.touchtv=='false'?'':'none'}}"></image>
+                  触屏电视
+              </view>
+              <view class="part3-icon {{selectjson.stucomputer=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.stucomputer=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb07.png' style="display:{{selectjson.stucomputer=='false'?'none':''}}"></image>
+                    <image src='../../images/sb07-grey.png' style="display:{{selectjson.stucomputer=='false'?'':'none'}}"></image>
+                  学生电脑
+              </view>
+              <view class="part3-icon part3-icon-last {{selectjson.actdesks=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.actdesks=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb08.png' style="display:{{selectjson.actdesks=='false'?'none':''}}"></image>
+                    <image src='../../images/sb08-grey.png' style="display:{{selectjson.actdesks=='false'?'':'none'}}"></image>
+                  活动书桌
+              </view>
+            </li>
+            <li>
+              <view class="part3-icon {{selectjson.aio=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.aio=='false'?'part3-icon-xian xian3':''}}"></view>
+                    <image src='../../images/sb09.png' style="display:{{selectjson.aio=='false'?'none':''}}"></image>
+                    <image src='../../images/sb09-grey.png' style="display:{{selectjson.aio=='false'?'':'none'}}"></image>
+                  一体机
+              </view>
+              <view class="part3-icon {{selectjson.meetingsys=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.meetingsys=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb10.png' style="display:{{selectjson.meetingsys=='false'?'none':''}}"></image>
+                    <image src='../../images/sb10-grey.png' style="display:{{selectjson.meetingsys=='false'?'':'none'}}"></image>
+                  会议系统
+              </view>
+              <view class="part3-icon {{selectjson.aircolo=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.aircolo=='false'?'part3-icon-xian xian2':''}}"></view>
+                    <image src='../../images/sb11.png' style="display:{{selectjson.aircolo=='false'?'none':''}}"></image>
+                    <image src='../../images/sb11-grey.png' style="display:{{selectjson.aircolo=='false'?'':'none'}}"></image>
+                  空调
+              </view>
+              <view class="part3-icon part3-icon-last {{selectjson.gddesk=='false'?'part3-icon-grey':''}}">
+                  <view class="{{selectjson.desks=='false'?'part3-icon-xian':''}}"></view>
+                    <image src='../../images/sb12.png' style="display:{{selectjson.desks=='false'?'none':''}}"></image>
+                    <image src='../../images/sb12-grey.png' style="display:{{selectjson.desks=='false'?'':'none'}}"></image>
+                  固定桌椅
+              </view>
+            </li>
+          </ul>
+       </view>
+    </view>
+    </view>
+</view>

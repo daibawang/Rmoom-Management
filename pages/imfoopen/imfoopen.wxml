@@ -1,0 +1,19 @@
+<!--pages/imfoopen/imfoopen.wxml-->
+<!--pages/record/record.wxml-->
+<backbar gohref="../index/index" paddingtop="85" margintop="0" imgcolor="back-grey"></backbar>
+  <view class='topbar-bg' >
+    <image src='../../images/index-bar-bg4.png' ></image>
+  </view>
+<view class='view1' >
+
+  <view class='view-title' wx:for="{{magelist}}" data-item="{{item}}" bindtap='show'>
+    <view class='view-content1'>
+      <view class='view-content1-left'>
+        <text class='left-text'>{{item.massage}}</text>
+        <text class='left-count'>{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+

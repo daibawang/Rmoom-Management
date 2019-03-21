@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "backbar": "/components/backbar/backbar"
+  },
+  "navigationBarTextStyle": "white"
+}

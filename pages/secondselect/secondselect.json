@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#2c9af5",
+  "navigationBarTextStyle": "withe",
+  "backgroundColor": "#FBFBFB",
+  "usingComponents": {
+    "backbar": "/components/backbar/backbar"
+  }
+}

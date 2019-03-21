@@ -1,0 +1,319 @@
+/* pages/roomdetail/roomdetail.wxss */
+/* pages/oneroomsure/oneroomsure.wxss */
+.body{
+  background:linear-gradient( to top  right, #18dbaa 0%, #1dd7bf 100%);
+  width: 100vw;
+  margin-top: -78px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10rpx;
+}
+  .modal-body{
+  margin-top: 150rpx;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  border-radius: 20rpx;
+  background: white;
+  }
+  .modal-bottom-patr1{
+    width:90%;
+    margin: 30rpx auto;
+    /* border: 1rpx solid red; */
+  }
+  .part1-name{
+  font-size: 35rpx;
+  font-family: "part1-name SC";
+  color: #4d4d4d;
+  line-height: 28rpx;
+  letter-spacing: 3rpx;
+  }
+  .part1-place{
+  margin-top: 18rpx;
+  font-size: 24rpx;
+  font-family: "Adobe Heiti Std";
+  color: #858585;
+  line-height: 18rpx;
+  letter-spacing: 3rpx;
+  }
+  .modal-bottom-part2{
+    /* border: 1rpx solid red;  */
+    /* height: 100rpx;*/
+    width: 90%;
+    margin: 10rpx auto;
+    display: flex;
+  }
+  .part2-view1{
+    height: 45rpx;
+    width:140rpx;
+    border-top-left-radius: 50rpx;
+    border-bottom-left-radius: 50rpx;
+    border-top-right-radius: 50rpx;
+    border-bottom-right-radius: 50rpx;
+    background: #EEEEEE;
+    margin-right: 40rpx;
+    text-align: center;
+    line-height: 45rpx;
+    font-size: 24rpx;
+    font-family: "Adobe Heiti Std";
+    color: #858585;
+    letter-spacing: 2rpx;
+  }
+
+  .view2{
+    width: 160rpx;
+  }
+
+  .modal-bottom-part3{
+    width: 90%;
+    margin: 15rpx auto;
+    display: flex;
+  }
+  .part3-icon{
+    position: relative;
+    width:140rpx;
+    margin: 0rpx 10rpx 16rpx 10rpx;
+    float: left;
+    font-size: 22rpx;
+    font-family: "Adobe Heiti Std";
+    color: #858585;
+  }
+
+  .part3-icon-last{
+    margin-right: 0rpx;
+  }
+  .part3-icon image{
+    width: 25rpx;
+    height: 21rpx;
+    margin-right: 4rpx;
+  }
+  .model-detail{
+    background-color: white;
+    margin-top: 30rpx;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-conten1{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30rpx;
+    width: 92%;
+    display: flex;
+    flex-direction: row;
+  }
+  .model-icon{
+    width: 30rpx;
+    height: 30rpx;
+  }
+
+  .model-icon:after {
+  position: absolute;
+  height: 18rpx;
+  width: 18rpx;
+  content: '';
+  border-radius: 50%;
+  border: 8rpx solid #33CAFF;
+}
+.model-title{
+  height: 30rpx;
+  margin-left: 20rpx;
+  color: #C1C4CB;
+  margin-top: -10rpx;
+  letter-spacing: 5rpx;
+}
+.model-input{
+  width: 90%;
+  margin: 35rpx auto 12px auto;
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+}
+.model-inputuse{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #C1C4CB;  
+  height:60rpx;
+  margin-top: 30rpx;
+  }
+.model-input text{
+  letter-spacing: 5rpx;
+  margin-top: 5rpx;
+  height: 23rpx;
+}
+.model-input input{
+  height: 23rpx;
+  margin-left: 10rpx;
+  color: #818181;
+  letter-spacing: 3rpx;
+  font-size: 30rpx;
+  z-index: 1;
+}
+.phone{
+  margin-top: 30rpx
+}
+.model-icon2{
+  width: 30rpx;
+  height: 30rpx;
+}
+.model-icon2:after {
+  position: absolute;
+  height: 18rpx;
+  width: 18rpx;
+  content: '';
+  border-radius: 50%;
+  border: 8rpx solid #ff6739;
+}
+.model-content2detail{
+  margin-top: 35rpx;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;  
+}
+.data-sure{
+  height:60rpx;
+  margin-top: 30rpx;
+}
+.time-sure{
+   height:60rpx;
+  margin-top: 40rpx;
+}
+.detail-title{
+  margin-top: -10rpx;
+  /* margin-top: 15rpx; */
+  width: 130rpx;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+}
+.detail-value{
+  width: 400rpx;
+  text-align: left;
+  margin-top: -10rpx;  
+  margin-left: 10rpx;
+  color: #818181;
+  letter-spacing: 3rpx;
+  font-size: 30rpx;
+}
+.model-icon3{
+  width: 30rpx;
+  height: 30rpx;
+}
+.model-icon3:after {
+  position: absolute;
+  height: 18rpx;
+  width: 18rpx;
+  content: '';
+  border-radius: 50%;
+  border: 8rpx solid #9666fe;
+}
+.modal-conten2{
+  margin-top: 20rpx;
+}
+.detail3{
+  padding-left: 40rpx;
+  line-height: 50rpx;
+  color: #818181;
+  font-size: 28rpx;
+  letter-spacing: 3rpx;
+}
+.detail3 p::before{
+  content: '';
+  height: 11rpx;
+  width: 11rpx;
+  background-color: #9666fe;
+  position: absolute;
+  margin-top: 23rpx;
+  margin-left: -20rpx;
+  border-radius: 50%;
+}
+.canle-time{
+  margin: 90rpx auto 50rpx auto;
+  width: 620rpx;
+  height: 88rpx;
+  background:linear-gradient( to right, #18dbaa 0%, #1dd7bf 100%);
+  color: white;
+  font-size: 50rpx;
+  text-align: center;
+  letter-spacing: 20rpx;
+  line-height: 88rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 15rpx #ff6739;
+}
+.canle-gray{
+    margin: 20rpx auto 50rpx auto;
+  color: #fefefe;
+  background:linear-gradient( to right, #e7e8e8 0%, #d6d6d6 100%);
+  box-shadow: 0 0 15rpx #fff;
+}
+/* 弹出 */
+.model-box-sure{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  }
+  .box-sure-bg{
+  box-shadow: 0 0rpx 20rpx #9666fe;
+  margin: 370rpx auto;
+  width: 560rpx;
+  height: 600rpx;
+  border-radius: 20rpx;
+  background: white;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  }
+  .modal-body-icon{
+    width: 150rpx;
+    height: 160rpx;
+    margin: 30rpx auto 0 auto;
+  }
+  .sure-success{
+    font-size: 40rpx;
+    color: #9666fe;
+    letter-spacing: 3rpx;
+    margin-top: 45rpx;
+  }
+  .sure-ts{
+    margin-top: 25rpx;
+    font-size: 30rpx;
+    color: #818181;
+    letter-spacing: 3rpx;
+  }
+  .sure-success-no,.sure-ts-no{
+    color: #bfbfbf;
+  }
+.submit-time-sure{
+  margin: 70rpx auto 50rpx auto;
+  width: 300rpx;
+  height: 88rpx;
+  background: linear-gradient(to right,#ac4cff 0%, #9666fe 100%);
+  color: white;
+  font-size: 35rpx;
+  text-align: center;
+  letter-spacing: 10rpx;
+  line-height: 88rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 15rpx #9c5ffe;
+}
+.modal-body-cha{
+    width: 50rpx;
+    height: 52rpx;
+    margin-left: 500rpx;
+    margin-top: 10rpx;
+}
+.model-ispass{
+  padding-top: 10rpx;
+  line-height: 50rpx;
+  margin-top: 30rpx;
+  margin-right: 40rpx;
+  color: rgb(226, 224, 224);
+}
