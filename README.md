@@ -1,5 +1,6 @@
 # 教室借用小程序
 已经基本开发完成，后续会进行代码优化。也想把其中的一部分抽离出来单独封装。
+预览网址：http://www.istuadmission.com/Portfolio/index.html
 ## 登录限制
 - 需要在app.js中将全局变量islogin 设置为true
 <br> ![image](https://github.com/daibawang/Rmoom-Management/blob/master/images/login.gif)
